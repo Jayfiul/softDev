@@ -5,9 +5,6 @@
 #count_evens([2, 2, 0]) → 3
 #count_evens([1, 3, 5]) → 0
 
-from operator import truediv
-
-
 def count_evens(nums):
   count = 0
   for n in nums:
