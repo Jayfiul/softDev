@@ -1,5 +1,5 @@
 '''
-Yusha Azizgit 
+Team YushaDog: Yusha Aziz, Brian Chen, & Craig Chen
 Soft Dev
 K06 -- py-csv
 2022-09-30

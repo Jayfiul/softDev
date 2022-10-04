@@ -1,5 +1,5 @@
 '''
-Yusha Aziz
+Team YushaDog: Yusha Aziz, Brian Chen, & Craig Chen
 Soft Dev
 K05 -- bistream
 2022-09-29
@@ -38,7 +38,7 @@ def get_devo(krewes):
     #pick pd from .keys()
     pd = r.choice(list(classes.keys()))
 
-    person = r.choice(classes[pd])
-    return(f"{pd} : {person[0]}, ducky named: {person[1]}")
+    pchose = r.choice(classes[pd])
+    return(f"{pd} : {pchose[0]}, ducky named: {pchose[1]}")
 
 print(get_devo(krewes))
