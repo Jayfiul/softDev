@@ -1,6 +1,5 @@
-import random
 '''
-Yusha Aziz
+Team IM-SOFT: Yusha Aziz, Julia Lee, Samuel
 SoftDev
 K04 -- choose
 2022-09-23
@@ -24,6 +23,8 @@ The actual key value was then saved in key using the keyindex.
 We followed a similar process for finding the final value.
 In order to make the code more flexible, we used the length of krewes and krewes.keys() instead of inserting specific values.
 '''
+
+import random
 
 def choose():
     krewes = {2:["NICHOLAS",  "ANTHONY",  "BRIAN",  "SAMUEL",  "JULIA",  "YUSHA",  "CORINA",  "CRAIG",  "FANG MIN",  "JEFF",  "KONSTANTIN",  "AARON",  "VIVIAN",  "AYMAN",  "TALIA",  "FAIZA",  "ZIYING",  "YUK KWAN",  "DANIEL",  "WEICHEN",  "MAYA",  "ELIZABETH",  "ANDREW",  "VANSH",  "JONATHAN",  "ABID",  "WILLIAM",  "HUI",  "ANSON",  "KEVIN",  "DANIEL",  "IVAN",  "JASMINE",  "JEFFREY"],
