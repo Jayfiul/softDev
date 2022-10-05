@@ -1,4 +1,10 @@
-# your heading here
+'''
+Team IM-SOFT: Yusha Aziz, Julia Lee, & Samuel 
+Soft Dev
+K07 -- teardown
+2022-10-03
+time spent: 30 mins
+'''
 
 from flask import Flask
 
