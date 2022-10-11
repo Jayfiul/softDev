@@ -1,0 +1,1 @@
+If you create a static subdirectory in the same directory as app.py, you can put .txt and .html files, and flask will know how to use it
