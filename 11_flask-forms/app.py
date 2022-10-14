@@ -10,7 +10,7 @@ from flask import request           #facilitate form submission
 #from flask import Flask, render_template, request
 
 app = Flask(__name__)    #create Flask object
-
+myDict = {"Yusha":"Tiny"} #dictionary to hold username and password, where the username is the key
 
 '''
 trioTASK:
@@ -37,7 +37,7 @@ def disp_loginpage():
     print(request)
     print("***DIAG: request.args ***")
     print(request.args)
-    #print("***DIAG: request.args['username']  ***")
+    print("***DIAG: request.args['username']  ***")
     #print(request.args['username'])
     print("***DIAG: request.headers ***")
     print(request.headers)
@@ -57,6 +57,16 @@ def authenticate():
     #print(request.args['username'])
     print("***DIAG: request.headers ***")
     print(request.headers)
+    keys = list(myDict.keys())
+    for i in keys:
+        if(i == request.args['username']):
+            break
+        else: 
+            return "Username Does not Exist, GO BACK"
+    if(myDict[request.args['username']] == request.args['password']): #this is a passwords maker.
+        return "DADDY"
+    else:
+        return "wrong password"
     return "Waaaa hooo HAAAH"  #response to a form submission
 
 
