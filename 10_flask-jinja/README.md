@@ -5,14 +5,12 @@ K10 -- flask-jinja
 time spent: 20 mins
 
 Disco:
-You cannot just put template filename into url.
+- You cannot just put template filename into url.
+- render_template renders the template with arguments specified, and has variables within the html
+- Variables in html in {{ }}
+- Python code is in {% %}
 
-render_template renders the template with arguments specified, and has variables within the html
-
-Variables in html in {{ }}
-
-Python code is in {% %}
-
+app.py Questions: 
 - Q0: The code cannoy run without the render_template
 - Q1: Yes, you just add the extension /my_fois_template
 - Q2: The first argument is the name of the template you want to access. 
