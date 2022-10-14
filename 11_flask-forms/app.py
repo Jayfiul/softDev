@@ -10,7 +10,7 @@ from flask import request           #facilitate form submission
 #from flask import Flask, render_template, request
 
 app = Flask(__name__)    #create Flask object
-myDict = {"Yusha":"Tiny"} #dictionary to hold username and password, where the username is the key
+myDict = { "Yusha":["Tiny"] , "Brian" : ["Testes"] } #dictionary to hold username and password, where the username is the key
 
 '''
 trioTASK:
@@ -58,18 +58,18 @@ def authenticate():
     print("***DIAG: request.headers ***")
     print(request.headers)
     keys = list(myDict.keys())
+    user = False
     for i in keys:
         if(i == request.args['username']):
-            break
-        else: 
-            return "Username Does not Exist, GO BACK"
+            user = True
+    if(user == False):
+        return "Username Does not Exist, GO BACK"
     if(myDict[request.args['username']] == request.args['password']): #this is a passwords maker.
-        return "DADDY"
+        return "Waaaa hooo HAAAH"  
     else:
         return "wrong password"
-    return "Waaaa hooo HAAAH"  #response to a form submission
-
-
+    # A working username and password will have this url:
+    # http://127.0.0.1:5000/auth?username=Yusha&password=Tiny&sub1=Submit+Query
     
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified

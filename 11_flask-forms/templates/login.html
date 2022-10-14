@@ -30,14 +30,17 @@
 
     <h3>
       Enter your username below to proceed.
-    </h3>
+    </h3>    
     <form action="/auth"> <!-- The significance of this line, is that when you hit submit it puts /auth in your action
       and takes you to @app.route("/auth")
       This is built into the HTML structure. It is linking up the front and the back end. 
       The action is adding an "/auth" after the current web address. -->
-      <input type="text" name="username"> 
+      Username: <input type="text" name="username"> 
+      <br>
+      Password: <input type="password" name ="password">
+      <br>
       <input type="submit" name="sub1"> 
-      <input type="password" name ="password">
+      
     </form>
     <br>
   </body>
