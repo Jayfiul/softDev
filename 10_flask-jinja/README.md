@@ -1,8 +1,8 @@
-Yusha Aziz
-SoftDev
-K10 -- flask-jinja
-2022-10-13
-time spent: 20 mins
+### Yusha Aziz
+### SoftDev
+### K10 -- flask-jinja
+### 2022-10-13
+### time spent: 20 mins
 
 Disco:
 - You cannot just put template filename into url.
