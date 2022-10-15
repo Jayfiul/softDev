@@ -1,0 +1,34 @@
+<html>
+
+  <head>
+    <title> SIGNUP PAGE </title>
+  </head>
+
+  <body>
+    <h1>
+      Welcome, People Who Do Not Have an Account:
+    </h1>
+
+
+    <h3>
+      Signup Below:
+    </h3>    
+    <form action="/register"> <!-- The significance of this line, is that when you hit submit it puts /auth in your action
+      and takes you to @app.route("/auth")
+      This is built into the HTML structure. It is linking up the front and the back end. 
+      The action is adding an "/auth" after the current web address. -->
+      Create Username: <input type="text" name="username1" required> 
+      <br>
+      Create Password: <input type="password" name ="password1" required>
+      <br>
+      Confirm Password: <input type="password" name ="password2" required>
+      <input type="submit" name="sub3"> 
+
+    </form>
+
+    <br>
+  </body>
+
+
+
+</html>

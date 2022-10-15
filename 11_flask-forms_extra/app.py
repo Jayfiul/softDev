@@ -5,6 +5,11 @@
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
 from flask import request           #facilitate form submission
+import csv
+
+
+UsePass = []
+
 
 #the conventional way:
 #from flask import Flask, render_template, request
@@ -45,6 +50,18 @@ def disp_loginpage():
 
 @app.route("/signUp")
 def signUp():
+    return render_template( 'signUp.html' )
+
+@app.route("/register")
+def register():
+    print("!!!!!!!!!!!!!! rquestUserNew ~~~~~~~~~~~~")
+    print(request.args['username1'])
+    with open('logins.csv', 'w') as c: #opens the CSV file in write mode
+        writer = csv.writer(c) #creates a csv writer
+        combo = [str(request.args['username1']),str(request.args['password1'])]
+        writer.writerow(combo)
+    print(combo)
+    return render_template('login.html')
     
 
 @app.route("/auth") # , methods=['GET', 'POST'])
