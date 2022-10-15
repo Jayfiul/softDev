@@ -53,8 +53,10 @@ def authenticate():
     print(request)
     print("***DIAG: request.args ***")
     print(request.args)
-    #print("***DIAG: request.args['username']  ***")
-    #print(request.args['username'])
+    print("***DIAG: request.args['username']  ***") 
+    print(request.args['username']) #this line will print out the username the person typed
+    print("***DIAG: request.args['password']  ***")
+    print(request.args['password'])
     print("***DIAG: request.headers ***")
     print(request.headers)
     keys = list(myDict.keys())
@@ -63,11 +65,21 @@ def authenticate():
         if(i == request.args['username']):
             user = True
     if(user == False):
-        return "Username Does not Exist, GO BACK"
-    if(myDict[request.args['username']] == request.args['password']): #this is a passwords maker.
-        return "Waaaa hooo HAAAH"  
+        error = "hi"
+        print("\n")
+        print("WRONG USERNAME \n") #code to see it working in the terminal
+        return render_template('login.html', error = "Username Does not Exist, GO BACK")
     else:
-        return "wrong password"
+        print("\n") 
+        print("Username is correct")
+    if(myDict[request.args['username']][0] == request.args['password']): #this is a passwords maker.
+        return "Waaaa hooo HAAAH"  
+    else: 
+        error = "hi"
+        print("\n")
+        print("WRONG PASSWORD \n")
+        
+        return render_template('login.html', error = "Wrong Password HEHEHEHAWWWWW")
     # A working username and password will have this url:
     # http://127.0.0.1:5000/auth?username=Yusha&password=Tiny&sub1=Submit+Query
     
