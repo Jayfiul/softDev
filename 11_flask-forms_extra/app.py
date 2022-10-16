@@ -56,7 +56,7 @@ def signUp():
 def register():
     print("!!!!!!!!!!!!!! rquestUserNew ~~~~~~~~~~~~")
     print(request.args['username1'])
-    with open('logins.csv', 'w') as c: #opens the CSV file in write mode
+    with open('logins.csv', 'a', newline='') as c: #opens the CSV file in append mode
         writer = csv.writer(c) #creates a csv writer
         combo = [str(request.args['username1']),str(request.args['password1'])]
         writer.writerow(combo)
