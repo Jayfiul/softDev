@@ -15,16 +15,16 @@ UsePass = []
 #from flask import Flask, render_template, request
 
 app = Flask(__name__)    #create Flask object
-myDict = { "Yusha":["Tiny"] , "Brian" : ["Testes"] } #dictionary to hold username and password, where the username is the key
+# myDict = { "Yusha":["Tiny"] , "Brian" : ["Testes"] } #dictionary to hold username and password, where the username is the key
 
-with open('logins.csv') as f:
+with open('logins.csv') as f: # opens the csv with the combinations
     myDict = f.readlines()
 
 print(myDict)
 logins = [] 
 
 
-for i in myDict: #splice list
+for i in myDict: #splice list and creates a list of [Usernames,Passwords]
     i = i[:-1]
     i.split(',')
     logins.append(i.split(','))
@@ -70,6 +70,31 @@ def signUp():
 def register():
     print("!!!!!!!!!!!!!! rquestUserNew ~~~~~~~~~~~~")
     print(request.args['username1'])
+    user1 = request.args['username1'] #stores the inputted new username request into an easy to read variable
+    #code to check if the username already exists
+    user = False
+    for i in logins:
+        if(i[0] == user1):
+            user = True
+    if(user):
+        error = "hi"
+        print("\n")
+        print("USERNAME EXISTS \n") #code to see it working in the terminal
+        return render_template('signUp.html', error = "Username Exists Try Again!") #error code for HTML to run, and start a try again
+    
+    print("!!!!!!!!!!!!!! rquestPASSnew ~~~~~~~~~~~~")
+    print(request.args['password1'])
+    pass1 = request.args['password1']
+    
+    print("!!!!!!!!!!!!!! rquestPASSconfirm ~~~~~~~~~~~~")
+    print(request.args['password2'])
+    pass2 = request.args['password2']
+    
+    if(pass1 != pass2):
+        print("\n")
+        print("PASSWORDS DO NOT MATCH \n")
+        return render_template('signUp.html', error= "Passwords Do Not Match Try Again!")
+    
     with open('logins.csv', 'a', newline='') as c: #opens the CSV file in append mode
         writer = csv.writer(c) #creates a csv writer
         combo = [str(request.args['username1']),str(request.args['password1'])]
@@ -93,12 +118,12 @@ def authenticate():
     print(request.args['password'])
     print("***DIAG: request.headers ***")
     print(request.headers)
-    with open('logins.csv') as f:
+    with open('logins.csv') as f: 
         myDict = f.readlines()
 
     logins = [] 
 
-    for i in myDict: #splice list
+    for i in myDict: #code to get an updated list of Usernames and Passwords (in case they made new logins)
         i = i[:-1]
         i.split(',')
         logins.append(i.split(','))
