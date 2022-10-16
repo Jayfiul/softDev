@@ -1,6 +1,8 @@
-# Clyde 'Thluffy' Sinclair
-# SoftDev
-# Oct 2022
+#Yusha Aziz
+#SoftDev
+#K11 -- flask-forms
+#2022-10-14
+#time spent: 1 hour
 
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
