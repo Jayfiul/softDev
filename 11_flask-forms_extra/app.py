@@ -23,15 +23,15 @@ with open('logins.csv') as f: # opens the csv with the combinations
     myDict = f.readlines()
 
 print(myDict)
-logins = [] 
+logins = []  #creates a blank list that is intended to hold the logins from the csv
 
 
 for i in myDict: #splice list and creates a list of [Usernames,Passwords]
     i = i[:-1]
     i.split(',')
-    logins.append(i.split(','))
+    logins.append(i.split(',')) 
 
-print(logins)
+print(logins) #prints the list of logins in the terminal for convenience
 
 '''
 trioTASK:
@@ -64,12 +64,12 @@ def disp_loginpage():
     print(request.headers)
     return render_template( 'login.html' )
 
-@app.route("/signUp")
-def signUp():
+@app.route("/signUp") #this is for a new function
+def signUp(): #this code will change the HTML template from login.html to signUp.html
     return render_template( 'signUp.html' )
 
-@app.route("/register")
-def register():
+@app.route("/register") #this a new path
+def register(): #this function will be called when the signUp button is pressed on the console side
     
     #update the list of users and passwords in case someone tries to make two users in a row with the same username without loggging in 
     with open('logins.csv') as f:  
@@ -87,9 +87,9 @@ def register():
     print(request.args['username1'])
     user1 = request.args['username1'] #stores the inputted new username request into an easy to read variable
     #code to check if the username already exists
-    user = False
+    user = False #if user = False, the username does not exist
     for i in logins:
-        if(i[0] == user1):
+        if(i[0] == user1): #that means the username is already in the list of Usernames
             user = True
     if(user):
         error = "hi"
@@ -99,26 +99,26 @@ def register():
     
     print("!!!!!!!!!!!!!! rquestPASSnew ~~~~~~~~~~~~")
     print(request.args['password1'])
-    pass1 = request.args['password1']
+    pass1 = request.args['password1'] #stores the new password 
     
     print("!!!!!!!!!!!!!! rquestPASSconfirm ~~~~~~~~~~~~")
     print(request.args['password2'])
-    pass2 = request.args['password2']
+    pass2 = request.args['password2']  #stores the confirmed password 
     
-    if(pass1 != pass2):
+    if(pass1 != pass2): #checks if the paswswords are matching or not, if they do not match it will bring you back to the signUp page
         print("\n")
         print("PASSWORDS DO NOT MATCH \n")
-        return render_template('signUp.html', error= "Passwords Do Not Match Try Again!")
+        return render_template('signUp.html', error= "Passwords Do Not Match Try Again!") #calls the signUp page with the error
     else:
         print("\n")
-        print("passwords match!")
+        print("passwords match!") #message for the coder to see in the terminal to make sure the code is working
         
     with open('logins.csv', 'a', newline='') as c: #opens the CSV file in append mode
         writer = csv.writer(c) #creates a csv writer
-        combo = [str(request.args['username1']),str(request.args['password1'])]
-        writer.writerow(combo)
-    print(combo)
-    return render_template('login.html')
+        combo = [str(request.args['username1']),str(request.args['password1'])] #stores the new Username, and Passowrd into an Array
+        writer.writerow(combo) #It will then append this combination into the csv file, on a new line
+    print(combo) #prints the new combination for the reader
+    return render_template('login.html') #now that you have added a new combination, you can go back and login
     
 
 @app.route("/auth") # , methods=['GET', 'POST'])
@@ -146,30 +146,30 @@ def authenticate():
         i.split(',')
         logins.append(i.split(','))
             
-    
+    #code below checks if the username exists
     user = False
     for i in logins:
         if(i[0] == request.args['username']):
             user = True
             UserIndex = i
-    if(user == False):
+    if(user == False): #if the username does not exist call the function with the error
         error = "hi"
         print("\n")
         print("WRONG USERNAME \n") #code to see it working in the terminal
-        return render_template('login.html', error = "Username Does not Exist, GO BACK")
+        return render_template('login.html', error = "Username Does not Exist, GO BACK") #calls the function with the error
     else:
         print("\n") 
         print("Username is correct")
-    if(UserIndex[1] == request.args['password']): #this is a passwords maker.
+    if(UserIndex[1] == request.args['password']): #if the password matches the one of the corresponding username it will run
         return "Waaaa hooo HAAAH"  
     else: 
         error = "hi"
         print("\n")
         print("WRONG PASSWORD \n")
         
-        return render_template('login.html', error = "Wrong Password HEHEHEHAWWWWW")
+        return render_template('login.html', error = "Wrong Password HEHEHEHAWWWWW") #calls the HTML file with the error
     # A working username and password will have this url:
-    # http://127.0.0.1:5000/auth?username=Yusha&password=Tiny&sub1=Submit+Query
+    # http://127.0.0.1:5000/auth?username=Yusha&password=Cat&sub1=Submit+Query
     
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
