@@ -17,6 +17,20 @@ UsePass = []
 app = Flask(__name__)    #create Flask object
 myDict = { "Yusha":["Tiny"] , "Brian" : ["Testes"] } #dictionary to hold username and password, where the username is the key
 
+with open('logins.csv') as f:
+    myDict = f.readlines()
+
+print(myDict)
+logins = [] 
+
+
+for i in myDict: #splice list
+    i = i[:-1]
+    i.split(',')
+    logins.append(i.split(','))
+
+print(logins)
+
 '''
 trioTASK:
 ~~~~~~~~~~~ BEFORE RUNNING THIS, ~~~~~~~~~~~~~~~~~~
@@ -79,11 +93,22 @@ def authenticate():
     print(request.args['password'])
     print("***DIAG: request.headers ***")
     print(request.headers)
-    keys = list(myDict.keys())
+    with open('logins.csv') as f:
+        myDict = f.readlines()
+
+    logins = [] 
+
+    for i in myDict: #splice list
+        i = i[:-1]
+        i.split(',')
+        logins.append(i.split(','))
+            
+    
     user = False
-    for i in keys:
-        if(i == request.args['username']):
+    for i in logins:
+        if(i[0] == request.args['username']):
             user = True
+            UserIndex = i
     if(user == False):
         error = "hi"
         print("\n")
@@ -92,7 +117,7 @@ def authenticate():
     else:
         print("\n") 
         print("Username is correct")
-    if(myDict[request.args['username']][0] == request.args['password']): #this is a passwords maker.
+    if(UserIndex[1] == request.args['password']): #this is a passwords maker.
         return "Waaaa hooo HAAAH"  
     else: 
         error = "hi"
