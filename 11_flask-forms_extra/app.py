@@ -68,6 +68,19 @@ def signUp():
 
 @app.route("/register")
 def register():
+    
+    #update the list of users and passwords in case someone tries to make two users in a row with the same username without loggging in 
+    with open('logins.csv') as f:  
+        myDict = f.readlines()
+
+    logins = [] 
+
+    for i in myDict: #code to get an updated list of Usernames and Passwords (in case they made new logins)
+        i = i[:-1]
+        i.split(',')
+        logins.append(i.split(','))
+    
+    
     print("!!!!!!!!!!!!!! rquestUserNew ~~~~~~~~~~~~")
     print(request.args['username1'])
     user1 = request.args['username1'] #stores the inputted new username request into an easy to read variable
@@ -94,7 +107,10 @@ def register():
         print("\n")
         print("PASSWORDS DO NOT MATCH \n")
         return render_template('signUp.html', error= "Passwords Do Not Match Try Again!")
-    
+    else:
+        print("\n")
+        print("passwords match!")
+        
     with open('logins.csv', 'a', newline='') as c: #opens the CSV file in append mode
         writer = csv.writer(c) #creates a csv writer
         combo = [str(request.args['username1']),str(request.args['password1'])]
