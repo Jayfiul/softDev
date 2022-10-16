@@ -41,25 +41,25 @@
       <br>
       Password: <input type="password" name ="password" required>
       <br>
-      <input type="submit" name="sub1"> 
+      <input type="submit" name="sub1" value = "Log In"> 
       {% if error == "Wrong Password HEHEHEHAWWWWW" %} <!-- this code will run if there is an error: Wrong password -->
          <action= "/">
          <br>
-         Password is WRONG, Try Again
+         Password is WRONG, Try Again <!-- Adds a message under the login-->
       {% endif %}
 
       {% if error == "Username Does not Exist, GO BACK" %} <!-- this code will run if there is an error: USERNAME DNE!  -->
       <action= "/">
       <br>
-      Username is WRONG, Try Again
+      Username is WRONG, Try Again <!-- Adds a message under the login-->
       {% endif %}
 
     </form>
 
-    <form action="/signUp">
+    <form action="/signUp"> <!-- This is a button that will take you to a new page to sign up-->
       <br>
       Do You want to SignUp? 
-      <input type="submit" name "sub2" value = "SignUp">
+      <input type="submit" name "sub2" value = "Sign Up">
     </form>
 
 
