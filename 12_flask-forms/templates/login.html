@@ -1,23 +1,11 @@
 <!DOCTYPE html>
 <!-- 
-#Yusha, Jeff, Fang
-# SoftDev
-# K12 -- Take and Give
-# 2022-10-17
-# time spent: 45 mins
-
-
-     simple demo of HTML forms via Flask
-     
-     trioTASK:
-     If any member of team has forms experience, let their know-how OSMOTE.
-     If no one does, seek external assistance.
-     
-     PROTIP: Revisit code from intro if you have it.
-     Peruse this code together and discuss how it should work,
-       in conjunction with the back end apparatus.
+    # Bottlers (Jeff Chen, Yusha Aziz, Fang Chen)	
+		# SoftDev
+    # K12 Take and Give (Flask GET and POST)
+    # October 17 2022
+    # time spent: 0.5 hrs
  -->
-
 
 <html>
 
@@ -26,16 +14,19 @@
   </head>
 
   <body>
-    <h1>
-      Welcome, Travelers of the Intertoobz!
-    </h1>
+    <h2>
+      You found a dungeon door! <br>
+      A stone is carved with "The Bottlers (Fang, Jeff, Yusha) were here." <br><br>
+      Now... open sesame with your username...
+    </h2>
 
 
     <h3>
       Enter your username below to proceed.
     </h3>
-    <form action="/auth" method = "GET"> <!--  this method = determines whether it is a GET or POST -->
+    <form action="/auth" method="POST">
       <input type="text" name="username">
+      <br><br>
       <input type="submit" name="sub1">
     </form>
     <br>
