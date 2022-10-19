@@ -1,0 +1,36 @@
+/* 
+  # Bottlers (Jeff Chen, Yusha Aziz, Fang Chen)	
+    # SoftDev
+    # K14 css
+    # October 18 2022
+    # time spent: 2.5 hrs
+*/
+
+body {
+    background-color: #666666;
+  }
+  
+  #headfoo {
+    color: white;
+    background-color: #bebebe;
+    text-align: center;
+    font-size: 40px;
+  }
+  
+  #block { 
+    background-color: #767676;
+    width: auto;
+    float: right;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+  
+  #copyright {
+    background-color: #565656;
+    text-align: right;
+    color: #767676;
+    font-size: 20px;
+    padding: 15px;
+  }
+  
