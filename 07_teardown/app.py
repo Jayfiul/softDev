@@ -1,9 +1,9 @@
 '''
-Team IM-SOFT: Yusha Aziz, Julia Lee, & Samuel 
+Yusha Aziz
 Soft Dev
-K07 -- teardown
-2022-10-03
-time spent: 30 mins
+K06 -- py-csv
+2022-09-30
+time spent: 60 mins
 '''
 
 from flask import Flask
