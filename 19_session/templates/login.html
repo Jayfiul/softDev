@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+	The Bottlers: Jeff Chen, Fang Min Chen, Yusha Aziz
+	SoftDev
+	K19 - Sessions Greetings
+	4-November-2022
+	Time spent: 1 hrs
+-->
+<html>
+
+  <head>
+    <title> LOGIN PAGE </title>
+  </head>
+
+  <body>
+    <h3>
+    	The Bottlers: Jeff Chen, Fang Min Chen, Yusha Aziz <br>
+	    LOGIN PLS
+    </h3>
+    <form action="/login" method="POST">
+      <input type="text" name="username">
+      {% if error == "wrong username!" %}
+      	username is wrong!
+	{% endif %}	
+      <br><br>
+      <input type="password" name="password">
+      {% if error == "wrong password!" %} 
+        password is wrong!
+        {% endif %}
+
+      <br><br>
+      <input type="submit" name="sub1" value="login">
+    </form>
+    <br>
+  </body>
+
+</html>

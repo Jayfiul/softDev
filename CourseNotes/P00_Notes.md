@@ -1,0 +1,8 @@
+- Checkout to working branch
+- Make your changes to the branch, then git commit while you are on the branch
+- THen whie you are still ont he branch, git merge Main
+- then fix any merge errors
+- then go back to main, git checkout main
+- Then do git merge WorkingBranch
+- 
+- 
