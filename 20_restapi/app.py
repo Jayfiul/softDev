@@ -1,19 +1,40 @@
+#Yusha Aziz & Talia Hsia
+#SoftDev  
+#K18 -- restapi
+#2022-11-21
+#time spent: 0.5 hrs
+
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
 from flask import request           #facilitate form submission
 import json
 import requests
 
-
-app = Flask(__name__) # Q0: Where have you seen similar syntax in other langs?
+app = Flask(__name__) 
 
 f = open("key_nasa.txt", "r")
 keyNasa = f.read() 
+#print(keyNasa) #test to check if the code above gets the key correctly
 
-print(keyNasa)
+response_API = requests.get('https://api.nasa.gov/planetary/apod?api_key=' + keyNasa)
+print(response_API)
+
+info = response_API.text #pulls all the information from the api file and puts in this string variable
+print(info) #checks out the string of info
+
+parse_json = json.loads(info) #puts the data into JSON format
+pictureURL = parse_json['url'] #stores the value associated with 'url' in the JSON to variable pictureURL
+print(pictureURL) #checks the image to see it is the correct image
+
+title = parse_json['title'] #retrieves the title of the picture
+print(title)
 
 @app.route("/") 
 def hello_world():
-    return render_template('main.html', key = keyNasa) 
+    return render_template('main.html', url = pictureURL, title = title) 
 
-app.run()  # Q5: Where have you seen similar constructs in other languages?
+if __name__ == "__main__": #false if this file imported as module
+    #enable debugging, auto-restarting of server when this file is modified
+    app.debug = True 
+    app.run()
+
