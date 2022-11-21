@@ -17,17 +17,17 @@ keyNasa = f.read()
 #print(keyNasa) #test to check if the code above gets the key correctly
 
 response_API = requests.get('https://api.nasa.gov/planetary/apod?api_key=' + keyNasa)
-print(response_API)
+#print(response_API)
 
 info = response_API.text #pulls all the information from the api file and puts in this string variable
-print(info) #checks out the string of info
+#print(info) #checks out the string of info
 
 parse_json = json.loads(info) #puts the data into JSON format
 pictureURL = parse_json['url'] #stores the value associated with 'url' in the JSON to variable pictureURL
-print(pictureURL) #checks the image to see it is the correct image
+#print(pictureURL) #checks the image to see it is the correct image
 
 title = parse_json['title'] #retrieves the title of the picture
-print(title)
+#print(title)
 
 @app.route("/") 
 def hello_world():
