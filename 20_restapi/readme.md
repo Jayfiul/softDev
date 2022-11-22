@@ -1,4 +1,4 @@
-# <Team Name TBD>
+# Team Terrifying Yuppies
 ## Yusha Aziz & Talia Hsia
 
 ### DISCOS

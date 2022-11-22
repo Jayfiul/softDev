@@ -1,4 +1,4 @@
-#Yusha Aziz & Talia Hsia
+#Team Terrifying Yuppies: Yusha Aziz & Talia Hsia
 #SoftDev  
 #K18 -- restapi
 #2022-11-21
