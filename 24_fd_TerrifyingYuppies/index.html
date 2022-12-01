@@ -1,0 +1,112 @@
+<!--
+TerrifyingYuppies: Yusha Aziz & Talia Hsia
+SoftDev
+K24 -- Introduction to Foundation
+2022-11-30
+time spent: 1.5 hours
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>DUCKIESSSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js"></script>
+</head>
+
+<body>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+    
+    <h1> Terrifying Yuppies </h1>
+    <h2>(Yusha Aziz and Talia Hsia)</h2>
+
+    <div class="large-8 medium-8 cell">
+        <h2> HAVE YOU SEEN THESE DUCKIES?</h2>
+        <div class="grid-x grid-padding-x">
+          <div class="large-6 medium-6 cell">
+            <div class="primary callout">
+              <div class="card">
+                <div class="card-divider">
+                 <h3>Ninetails</h3>
+                </div>
+                <img src="https://www.serebii.net/Shiny/SWSH/038.png">
+                <div class="card-section">
+                    <h2>About</h2>
+                  <p>it's a bear not a duck though</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="large-6 medium-6 cell">
+            <div class="primary callout">
+
+              <div class="card">
+                <div class="card-divider">
+                  DNAME
+                </div>
+                <img src="https://www.pngkey.com/png/detail/21-218022_ice-bear-we-bare-bears-black.png">
+                <div class="card-section">
+                    <h2>About</h2>
+                  <p>named by the most creative of namers</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <h3> If you have any information please tell us here!</h3>
+	<form data-abide novalidate>
+		<div class="grid-x grid-margin-x">
+            <div class="grid-x grid-padding-x">
+                <div class="large-4 medium-4 cell">
+                    <div data-abide-error class="alert callout" style="display: none;">
+                        <p><i class="fi-alert"></i> There are some errors in your form.</p>
+                    </div>
+                </div>
+                <div class="large-4 medium-4 cell">
+                    <label>First Name
+                        <input type="text" name="first_name" required pattern="[a-zA-Z]+">
+                    </label>
+                    <span class="form-error">
+                        First name is required and must be a string.
+                    </span>
+                </div>
+                <div class="large-4 medium-4 cell">
+                    <label>Last Name
+                        <input type="text" name="last_name" required pattern="[a-zA-Z]+">
+                    </label>
+                    <span class="form-error">
+                        Last name is required and must be a string.
+                    </span>
+                </div>
+                <div class="large-4 medium-4 cell">
+                    <label>Email
+                        <input type="email" name="email" required>
+                    </label>
+                    <span class="form-error">
+                        Email is required and must be a valid email address.
+                    </span>
+			</div>
+        </div> <!--grid 1-->
+			<div class="large-12 cell">
+                <label>Information?</label>
+                <textarea placeholder="Suggestion" id="1"></textarea>
+              </div>
+            </div>
+
+            <div class="large-6 medium-6 cell">
+                <label>Would you like to receive updates on our search for these Duckies?</label>
+                <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Yes</label>
+                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">No</label>
+              </div>
+		</div>
+	</form>
+</body>	
+</html>
