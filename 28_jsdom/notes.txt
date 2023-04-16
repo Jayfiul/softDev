@@ -1,0 +1,23 @@
+Team SexyMFs:: Yusha A & Russel G
+SoftDev pd2
+Manipulating the DOM
+2023-04-16
+
+DISCO
+-----------------------------------------------------------------
+* In Dr.Racket you have to set the language in the top of the code
+* You type out lambda
+* You use `Node` to compile JavaScript code, so its Node *filename*.js
+* If you want to print anything on the terminal, you have to have to do `console.log` and then the thing you
+want to put in parenthese after that. 
+=================================================================
+
+QCC
+-----------------------------------------------------------------
+* How to compile Scheme code?
+* It is hard to remember to put a semi colon after each line of code becuase we have used so much python
+* Ctrl Shift K did work for me, but I just did Ctrl Shift I and looked at the console from there. 
+=================================================================
+
+
+
