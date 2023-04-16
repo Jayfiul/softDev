@@ -27,8 +27,9 @@
 
 //send diagnostic output to console
 //(Ctrl-Shift-K in Firefox to reveal console)
-console.log("AYO");
+console.log("AYO"); //prints AYO in the console
 
+//stores one string var i as hello and an int var j as 20
 var i = "hello";
 var j = 20;
 
@@ -36,12 +37,12 @@ var j = 20;
 //assign an anonymous fxn to a var
 var f = function(x) {
   var j=30;
-  return j+x;
+  return j+x; //adds 30 to the argument
 };
 
 
 //instantiate an object
-var o = { 'name' : 'Thluffy',
+var o = { 'name' : 'Thluffy', //it looks as if this var is a composition of many things, it also looks like a dictionary of sorts
           age : 1024,
           items : [10, 20, 30, 40],
           morestuff : {a : 1, b : 'ayo'},
@@ -55,13 +56,13 @@ var addItem = function(text) {
   var list = document.getElementById("thelist");
   var newitem = document.createElement("li");
   newitem.innerHTML = text;
-  list.appendChild(newitem);
+  list.appendChild(newitem); //adds the item to the very end
 };
 
 
 var removeItem = function(n) {
   var listitems = document.getElementsByTagName('li');
-  listitems[n].remove();
+  listitems[n].remove(); //removes the index that is the argument
 };
 
 
@@ -76,18 +77,63 @@ var red = function() {
 var stripe = function() {
   var items = document.getElementsByTagName("li");
   for(var i = 0; i < items.length; i++) {
-    if (i%2==0){
-      items[i].classList.add('red');
+    if (i%2==0){ //if even
+      items[i].classList.add('red'); //make it red
     } else {
-      items[i].classList.add('blue');
+      items[i].classList.add('blue'); //make it blue
     }
   }
 };
 
 //insert your implementations here for...
 // FIB
+function fib(n){
+  if (n <= 0) 
+      return "Error!";
+  else if (n == 1)
+      return 0;
+  else if (n == 2)
+      return 1;
+  else {
+      var first = 0;
+      var second = 1;
+      for (var i = 3; i <= n; i++) {
+          subSum = first + second;
+          first = second;
+          second = subSum;
+      }
+      return subSum;
+  }
+}
+
 // FAC
+function fact(n){
+  if (n<= 0) 
+      return "Error";
+  else if (n == 1)
+      return 1;
+  else {
+      var output = 1;
+      for (var i = 1; i <= n; i++) {
+          output *=i;
+      }
+      return output;
+  }
+}
+
 // GCD
+function gcd(a, b) {
+  if (b == 0) {
+    return a;
+  } else {
+    while (b != 0) {
+      var temp = b;
+      b = a % b;
+      a = temp;
+    }
+    return a;
+  }
+}
 
 // In addition to the style shown above,
 //  you are encouraged to test drive the "arrow function syntax" as shown below.

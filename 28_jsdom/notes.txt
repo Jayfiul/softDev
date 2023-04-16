@@ -5,18 +5,20 @@ Manipulating the DOM
 
 DISCO
 -----------------------------------------------------------------
-* In Dr.Racket you have to set the language in the top of the code
-* You type out lambda
-* You use `Node` to compile JavaScript code, so its Node *filename*.js
-* If you want to print anything on the terminal, you have to have to do `console.log` and then the thing you
-want to put in parenthese after that. 
+* The variables in java script can hold a wide assortment of things
+    - arrays
+    - functions!?!?!
+    - ints
+* It was surprising that they can hold it all together too
+* the command `.createElement` is used to create a new element in a list
+* the command `.appendChild()` appends to the list
+* if you have a list, the command `.remove()` removes it from the list
 =================================================================
 
 QCC
 -----------------------------------------------------------------
-* How to compile Scheme code?
-* It is hard to remember to put a semi colon after each line of code becuase we have used so much python
-* Ctrl Shift K did work for me, but I just did Ctrl Shift I and looked at the console from there. 
+* I am not entirely sure what the `getElementsByTagName()` commmand does
+* 
 =================================================================
 
 
