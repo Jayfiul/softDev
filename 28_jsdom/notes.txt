@@ -18,7 +18,7 @@ DISCO
 QCC
 -----------------------------------------------------------------
 * I am not entirely sure what the `getElementsByTagName()` commmand does
-* 
+* Would we able to use the gcd() function instead of coding what that function already does, cause js has one built in 
 =================================================================
 
 
