@@ -143,4 +143,6 @@ const myFxn = (param1, param2) => {
   return retVal;
 };
 
-
+document.getElementById("fib").innerHTML = fib(5);
+document.getElementById("fact").innerHTML = fact(5);
+document.getElementById("gcd").innerHTML = gcd(5,7);
