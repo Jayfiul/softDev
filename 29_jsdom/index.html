@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<!--
+     Team SexyMFs:: Yusha A & Russel G
+     SoftDev pd2
+     K28 -- Manipulating the DOM
+     2023-04-16
+   --------------------------------------------------
+-->
+
+<html lang="en">
+  <!-- HTML file for exploring JavaScript interactions with the DOM -->
+
+  <head>
+    <meta charset="utf-8">
+    <style>
+      .red   {color : #ff0000;}
+      .green {color : #00ff00;}
+      .blue  {color : #0000ff;}
+    </style>
+  </head>
+
+  <body>
+    <h1 id="h" class="blue">Hello World!</h1>
+
+    <div id="div1" class="green">This fib of 5 is <span id = "fib"></span></div>
+    <div id="div2">This fact of 5 is <span id = "fact"></div>
+    <div class="blue">This gcd between 5 and 7 is <span id = "gcd"></div>
+
+    <ol id="thelist">
+      <li class="">item 0</li>
+      <li class="green blue">item 1</li>
+      <li class="green blue">item 2</li>
+      <li class="red green blue">item 3</li>
+      <li class="red green blue">item 4</li>
+      <li class="green blue">item 5</li>
+      <li class="green blue">item 6</li>
+      <li class="">item 7</li>
+    </ol>
+
+    <button type="button" id="b" onclick="doIt()">Try it</button>
+    <div id="div1" class="green">The fib of 6 is <span id="a"></span></div>
+
+    <script src="dommy_consolery.js"></script> <!-- Runs the javascript code-->
+
+  </body>
+</html>
