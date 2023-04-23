@@ -143,10 +143,11 @@ const myFxn = (param1, param2) => {
   return retVal;
 };
 
-document.getElementById("fib").innerHTML = fib(5);
-document.getElementById("fact").innerHTML = fact(5);
-document.getElementById("gcd").innerHTML = gcd(5,7);
+document.getElementById("fib").innerHTML = fib(10);
+document.getElementById("fact").innerHTML = fact(10);
+document.getElementById("gcd").innerHTML = gcd(10,100);
 
+/*
 function doIt(){
   var dasbut = document.getElementById("b"); 
   dasbut.addEventListener('click', ()=>{
@@ -154,3 +155,47 @@ function doIt(){
     document.getElementById("a").innerHTML = fib(6);
   });
 }
+*/
+
+
+
+function logFibonacci() {
+  var result = fib(10);
+  console.log("Fibonacci of 20:", result);
+  document.getElementById("one").innerHTML = result;
+}
+
+function logFactorial() {
+  var result = fact(10);
+  console.log("Factorial of 10:", result);
+  document.getElementById("two").innerHTML = result;
+}
+
+function logGcd() {
+  var result = gcd(100, 10);
+  console.log("GCD of 100 and 10:", result);
+  document.getElementById("three").innerHTML = result;
+}
+
+function bindFibonacci() {
+  var button = document.getElementById("FIB"); 
+  console.log("Fibonacci button bound");
+  button.addEventListener('click', logFibonacci);
+}
+
+function bindFactorial() {
+  var button = document.getElementById("FACT"); 
+  console.log("Factorial button bound");
+  button.addEventListener('click', logFactorial);
+}
+
+function bindGCD() {
+  var button = document.getElementById("GCD"); 
+  console.log("GCD button bound");
+  button.addEventListener('click', logGcd);
+}
+
+//I call the functions here or else you have to press the button twice!
+bindFibonacci();
+bindFactorial();
+bindGCD();

@@ -23,9 +23,9 @@
   <body>
     <h1 id="h" class="blue">Hello World!</h1>
 
-    <div id="div1" class="green">This fib of 5 is <span id = "fib"></span></div>
-    <div id="div2">This fact of 5 is <span id = "fact"></div>
-    <div class="blue">This gcd between 5 and 7 is <span id = "gcd"></div>
+    <div id="div1" class="green">The fib of 10 is <span id = "fib"></span></div>
+    <div id="div2" class = "red">The fact of 10 is <span id = "fact"></div>
+    <div class="blue">The gcd between 10 and 100 is <span id = "gcd"></div>
 
     <ol id="thelist">
       <li class="">item 0</li>
@@ -38,10 +38,15 @@
       <li class="">item 7</li>
     </ol>
 
-    <button type="button" id="b" onclick="doIt()">Try it</button>
-    <div id="div1" class="green">The fib of 6 is <span id="a"></span></div>
+    <button type="button" id="FIB" onclick="bindFibonacci()">Fib(20)</button>
+    <div id="div1" class="green">The fib of 20 is <span id="one"></span></div>
+    <button type="button" id="FACT" onclick="bindFactorial()">Fact(20)</button>
+    <div id="div1" class="red">The fact of 20 is <span id="two"></span></div>
+    <button type="button" id="GCD" onclick="bindGCD()">GCD(20,7)</button>
+    <div id="div1" class="blue">The gcd of 20 and 7 is <span id="three"></span></div>
 
     <script src="dommy_consolery.js"></script> <!-- Runs the javascript code-->
 
   </body>
 </html>
+
