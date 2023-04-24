@@ -1,0 +1,17 @@
+Team AYO :: Yusha A, Aaron G
+SoftDev pd2
+K29 -- DOMfoolery++
+2023-04-20t
+
+DISCO
+-----------------------------------------------------------------
+-  Bind command needs to be called at the end of the file, or else the button needs to be pressed twice for the command to run. 
+-  Arrow syntax can be used to save redundant commands, like "function", and can streamline function making process
+-  Use Bind function to connect the button to the function instead of just running the function
+-  Using element IDs to reference the different functions when called
+=================================================================
+
+QCC
+-----------------------------------------------------------------
+* How does this binding work? Multiple functions with one button?
+=================================================================
