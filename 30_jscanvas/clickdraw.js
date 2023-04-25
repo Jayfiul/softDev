@@ -1,3 +1,11 @@
+/*
+Yusha Aziz & William V
+SoftDev pd2
+K30 -- canvas based JS drawing
+2023-04-24m
+HTML file for JavaScript canvas work
+*/
+
 let canvas = document.getElementById("slate");
 let ctx = canvas.getContext("2d");
 

@@ -1,0 +1,15 @@
+Team YOOOOO :: Yusha A, William V
+SoftDev pd2
+K30 -- canvas based JS drawing
+2023-04-24m
+
+DISCO
+-----------------------------------------------------------------
+- you can use let instead of var
+- to set up canvas use this command in the javascript: let canvas = document.getElementById("___");
+=================================================================
+
+QCC
+-----------------------------------------------------------------
+* Implement more shapes in the future.
+=================================================================
