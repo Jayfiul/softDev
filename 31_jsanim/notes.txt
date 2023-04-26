@@ -1,0 +1,16 @@
+Team AYO :: Yusha A, Aaron G, Sebastian
+SoftDev pd2
+K31 -- canvas based JS animation
+2023-04-25t
+
+DISCO
+-----------------------------------------------------------------
+- variables have to line up from js to html
+- you can use stopAnimation to stop it
+=================================================================
+
+QCC
+-----------------------------------------------------------------
+* how does cancelAnimationFrame work?
+* what are the limitaitons of this?
+=================================================================
