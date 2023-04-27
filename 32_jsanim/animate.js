@@ -70,8 +70,8 @@ var dvdLogoSetup = function(){
     var rectY = Math.floor(Math.random() * 460);
     // console.log(rectY);
 
-    var xVel = 2;
-    var yVel = 2;
+    var xVel = 5;
+    var yVel = 5;
 
     var logo = new Image();
     logo.src = "logo_dvd.jpg";
