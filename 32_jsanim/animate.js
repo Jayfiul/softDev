@@ -17,6 +17,7 @@ ctx.fillStyle = "#0000FF";
 var requestID;
 
 var clear = (e) => {
+    //e.preventDefault(); //keep this commented
     ctx.clearRect(0, 0, c.width, c.height);
 };
 
