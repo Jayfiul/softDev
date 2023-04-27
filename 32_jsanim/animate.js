@@ -1,14 +1,14 @@
 /*
-Team AYO :: Yusha A, Aaron G, Sebastian
+Team Monkeys :: Yusha A & Shafiul H
 SoftDev pd2
-K31 -- canvas based JS animation
-2023-04-25t
+K32 -- canvas based JS animation
+2023-04-26t
 */
 
 var c = document.getElementById("playground");
 var dotButton = document.getElementById("buttonCircle");
 var stopButton = document.getElementById("buttonStop");
-var movieButton = document.getElementById("buttonMovie");
+var dvdButton = document.getElementById("buttonMovie");
 
 var ctx = c.getContext("2d");
 
@@ -17,7 +17,6 @@ ctx.fillStyle = "#0000FF";
 var requestID;
 
 var clear = (e) => {
-    e.preventDefault();
     ctx.clearRect(0, 0, c.width, c.height);
 };
 
@@ -50,48 +49,51 @@ var drawDot = () => {
 
     window.cancelAnimationFrame(requestID);
     requestID = window.requestAnimationFrame(drawDot);
-}
+};
 
-var dvdLogoSetup = function(){
-    window.cancelAnimationFrame(requestID);
-    var rectWidth = movieButton.height;
-    var rectHeight = movieButton.width;
-
-    var rectX = Math.random(c.width) - rectWidth;
-    var rectY = Math.random(c.height) - rectHeight;
-
-    var rand = Math.random();
-
-    var xVel = 5*Math.cos(rand*2*Math.PI);
-    var yVel = 5*Math.sin(rand*2*Math.PI);
-
-
-    var velocity = 5;
-
-}
-
-var logo = new Image();
-logo.src = "logo_dvd.jpg";
-
-var dvdLogo = function(){
-    ctx.clearRect(0,0,c.width, c.height);
-    ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
-    if (y < 0 || y > c.height-rectHeight){
-        yVel = YVel * -1
-    }
-    if (x < 0 || x > c.width-rectWidth){
-        xVel = xVel * -1
-    }
-    rectX += xVel;
-    rectY += yVel;
-    requestID = window.requestAnimationFrame(buttonMovie);
-}
 
 var stopIt = () => {
     console.log("stopIt invoked...")
     console.log(requestID);
     window.cancelAnimationFrame(requestID);
-}
+};
+
+var dvdLogoSetup = function(){
+    window.cancelAnimationFrame(requestID);
+
+    var rectWidth = 60;
+    var rectHeight = 40;
+
+    var rectX = Math.floor(Math.random() * 440);
+   // console.log(rectX);
+    var rectY = Math.floor(Math.random() * 460);
+    // console.log(rectY);
+
+    var xVel = 2;
+    var yVel = 2;
+
+    var logo = new Image();
+    logo.src = "logo_dvd.jpg";
+
+    var dvdLogo = function(){
+        ctx.clearRect(0,0,c.width, c.height);
+        ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
+
+        if (rectY <= 0 || rectY >= c.height-rectHeight){
+            yVel = yVel * -1;
+        }
+        if (rectX <= 0 || rectX >= c.width-rectWidth){
+            xVel = xVel * -1;
+        }
+        rectX += xVel;
+        rectY += yVel;
+        requestID = window.requestAnimationFrame(dvdLogo);
+    };
+    
+    dvdLogo();
+
+};
+
 
 dotButton.addEventListener("click",drawDot);
 stopButton.addEventListener("click", stopIt);

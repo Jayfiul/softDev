@@ -1,0 +1,13 @@
+Team Monkeys: Yusha, Shafiul
+SoftDev pd2
+K32 -- animation in canvas JS
+2023-04-26t
+Time Spent: 0.5 hrs
+
+DISCO:
+1. You should use the Math.floor function when you are getting a random number
+2. You can have a function inside of a function
+
+
+QCC:
+1. Whenever I had the `e.preventDefault();` code in my clear function none of my javascripy code would work
