@@ -1,0 +1,18 @@
+Team AYOOO: Yusha Aziz
+SoftDev pd2
+K33 -- Bubbling
+2023-04-28f
+
+DISCO
+-----------------------------------------------------------------
+* The capture phase starts from the uppermost level of the DOM tree and descends towards the lower-level elements, including the target element.
+* When the target element is reached on the DOM tree, it enters the target phase.
+* Following the target phase, the bubbling phase commences, moving upwards from the target element towards the window.
+* When using addEventListener, the boolean (which is set to false by default) specifies whether the callback should be executed during the bubbling phase (if set to false, then yes).
+* Using stopPropagation() halts the chain reaction at the first callback.
+=================================================================
+
+QCC
+-----------------------------------------------------------------
+* What is bubbling and squeak?
+=================================================================
